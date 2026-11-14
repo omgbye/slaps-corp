@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700;800;900&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
 <style>
-  /* ============ SLAPS CORP. — one page. Clean white, black, lime. ============
+  /* ============ SLAPS CORP. — one page. Clean white, black, acid green. ============
      Modular sections: each <section data-module> is self-contained so a
      single component can be swapped in later without touching the rest.
      Motion recreates FREE React Bits effects in vanilla CSS/JS (see js):
@@ -20,7 +20,7 @@
   :root{
     --bg:#ffffff; --white:#ffffff; --panel:#ffffff; --field:#ffffff;
     --ink:#131311; --grey:#76766e; --line:rgba(19,19,17,.14);
-    --lime:#cdf463; --font:"Libre Franklin",Helvetica,Arial,sans-serif;
+    --lime:#b6ff00; --acid:#b6ff00; --acid-tint:#f2ffd0; --font:"Libre Franklin",Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -28,15 +28,16 @@
   img{display:block;max-width:100%}
   a{color:inherit}
   ::selection{background:var(--lime);color:#000}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
   button,[role="button"],input,textarea,a.pill{min-height:2.25rem}
   .wrap{max-width:1380px;margin:0 auto;padding:0 clamp(18px,3.5vw,52px)}
   section{padding:clamp(58px,7vw,96px) 0}
   .tight{padding-top:8px}
 
   /* section header rule — as in his screenshots: ■ label / center / ©2025 */
-  .sec-top{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--line);padding-top:18px;margin-bottom:clamp(32px,4vw,52px);font-size:.95rem;font-weight:500}
+  .sec-top{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:2px solid var(--lime);padding-top:18px;margin-bottom:clamp(32px,4vw,52px);font-size:.95rem;font-weight:500}
   .sec-top .lft{display:flex;align-items:center;gap:10px}
-  .sec-top .sq{width:11px;height:11px;background:var(--lime);border-radius:2px;flex:none}
+  .sec-top .sq{width:13px;height:13px;background:var(--lime);border-radius:2px;flex:none}
   .sec-top .mid{letter-spacing:.05em;text-transform:uppercase;font-weight:600;text-align:center}
   .sec-top .rgt{font-weight:600;white-space:nowrap}
 
@@ -53,15 +54,16 @@
   .rb-fade.in{opacity:1;transform:none}
 
   /* pill button — lime circle arrow, as in his screenshots */
-  .pill{display:inline-flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 26px 6px 6px;text-decoration:none;font-weight:500;font-size:1rem;will-change:transform}
-  .pill .arr{width:46px;height:46px;flex:none;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center}
+  .pill{display:inline-flex;align-items:center;gap:16px;background:var(--lime);border:1px solid var(--lime);border-radius:999px;padding:6px 26px 6px 6px;text-decoration:none;font-weight:600;font-size:1rem;will-change:transform;transition:background .25s ease,color .25s ease,border-color .25s ease}
+  .pill:hover{background:#131311;border-color:#131311;color:#fff}
+  .pill .arr{width:46px;height:46px;flex:none;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
   .pill .arr svg{width:20px;height:20px}
   .pill-lime{background:var(--lime)}
   .stars{color:var(--lime);letter-spacing:.28em;font-size:1.05rem;white-space:nowrap}
   .dots{display:flex;gap:7px;align-items:center}
   .dots i{width:9px;height:9px;border-radius:50%;background:#d3d3cc;display:block}
   .dots i:first-child{background:var(--lime)}
-  .tag{display:inline-flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:.92rem;font-weight:500;color:#3a3a36;white-space:nowrap}
+  .tag{display:inline-flex;align-items:center;background:var(--lime);border:1px solid var(--lime);border-radius:999px;padding:9px 18px;font-size:.92rem;font-weight:600;color:#131311;white-space:nowrap}
 
   /* React Bits: GlareHover — extremely subtle (JS sets --gx/--gy) */
   .rb-glare{position:relative;overflow:hidden}
@@ -82,7 +84,7 @@
   .intro-copy p{font-size:clamp(1.02rem,1.35vw,1.16rem);line-height:1.65;margin:0 0 26px;max-width:105ch}
   .intro-copy p b{font-weight:700}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,90px);margin-top:clamp(40px,5vw,64px)}
-  .two-col .col{border-top:1px solid var(--line);padding-top:26px}
+  .two-col .col{border-top:3px solid var(--lime);padding-top:26px}
   .two-col h3{font-size:1.05rem;font-weight:600;margin:0 0 20px}
   .two-col p{font-size:clamp(1.45rem,2.5vw,2.15rem);font-weight:700;letter-spacing:-.025em;line-height:1.28;margin:0}
   .products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(40px,5vw,64px)}
@@ -90,9 +92,10 @@
 
   /* ---------- 3 · Process cards ---------- */
   .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .pcard{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px 28px 30px}
+  .pcard{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--lime);border-radius:18px;padding:28px 28px 30px;transition:border-color .25s ease,box-shadow .25s ease}
+  .pcard:hover,.hcard:hover,.bcard:hover{border-color:var(--lime);box-shadow:0 0 0 1.5px var(--lime)}
   .pcard .head{display:flex;justify-content:space-between;align-items:flex-start}
-  .pcard .num{font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
+  .pcard .num{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;background:linear-gradient(transparent 66%,var(--lime) 66%)}
   .pcard h3{font-size:1.02rem;font-weight:600;margin:26px 0 16px;display:flex;gap:10px;align-items:center}
   .pcard h3 .sq{width:11px;height:11px;background:var(--lime);border-radius:2px;flex:none}
   .pcard p{font-size:clamp(1.12rem,1.6vw,1.42rem);font-weight:600;letter-spacing:-.02em;line-height:1.42;color:#3d3d38;margin:0}
@@ -102,10 +105,10 @@
   .brands img{width:100%;aspect-ratio:792/1084;object-fit:cover;border-radius:14px;background:var(--panel)}
 
   /* ---------- 5 · Corporate Assets (Subsidiary Holdings) ---------- */
-  .big-title{font-size:clamp(2.9rem,7.5vw,6.8rem);font-weight:800;letter-spacing:-.04em;line-height:1;text-align:center;margin:0}
+  .big-title{font-size:clamp(2.9rem,7.5vw,6.8rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;text-align:center;margin:0;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:.07em;text-underline-offset:.12em}
   .assets-copy{max-width:1020px;margin:clamp(28px,4vw,44px) auto 0;text-align:center}
   .assets-copy p{font-size:clamp(1.35rem,2.4vw,2.05rem);font-weight:700;letter-spacing:-.025em;line-height:1.35;margin:0 0 34px}
-  .active-label{text-align:center;color:var(--grey);font-size:1.05rem;margin:clamp(36px,4vw,52px) 0 22px}
+  .active-label{text-align:center;color:var(--ink);font-weight:700;font-size:1.05rem;margin:clamp(36px,4vw,52px) 0 22px}
   /* React Bits: LogoLoop — slow, calm looping marquee */
   .logo-loop{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
   .logo-track{display:flex;width:max-content;animation:rbLoop 38s linear infinite}
@@ -129,7 +132,7 @@
   .gov .lbl .sq{width:11px;height:11px;background:var(--lime);border-radius:2px;margin-top:5px;flex:none}
   .gov p{font-size:clamp(1.35rem,2.3vw,1.95rem);font-weight:700;letter-spacing:-.025em;line-height:1.38;margin:0;max-width:52ch}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);margin-top:clamp(48px,6vw,80px)}
-  .stat .big{font-size:clamp(3.4rem,6.5vw,6.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;border-bottom:1px solid var(--line);padding-bottom:26px}
+  .stat .big{font-size:clamp(3.4rem,6.5vw,6.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;border-bottom:4px solid var(--lime);padding-bottom:26px}
   .stat h3{font-size:clamp(1.25rem,1.9vw,1.7rem);font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:24px 0 10px}
   .stat p{color:var(--grey);font-size:1.02rem;line-height:1.6;margin:0;max-width:34ch}
 
@@ -141,7 +144,7 @@
   .bcard img{width:100%;aspect-ratio:1.63;object-fit:cover;border-radius:12px}
   .bcard .bbody{padding:18px 10px 8px}
   .bcard h3{font-size:1.16rem;font-weight:600;line-height:1.35;margin:0}
-  .bcard time{display:block;margin-top:12px;color:var(--grey);font-size:.95rem}
+  .bcard time{display:inline-block;margin-top:12px;background:var(--lime);color:#131311;font-weight:600;font-size:.95rem;padding:3px 12px;border-radius:999px}
   .form-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,5vw,80px);margin-top:clamp(58px,7vw,90px);align-items:start}
   .chip-dark{display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:var(--lime);border-radius:12px;padding:13px 20px;font-weight:600}
   .chip-dark svg{width:19px;height:19px}
@@ -149,13 +152,14 @@
   .form-left .vetted{font-size:clamp(1.08rem,1.5vw,1.28rem);font-weight:600;line-height:1.45;margin:26px 0 0;max-width:38ch}
   .form-points{list-style:none;margin:30px 0 34px;padding:24px 0 0;border-top:1px solid var(--line);display:grid;gap:18px}
   .form-points li{display:flex;align-items:center;gap:14px;font-size:1.05rem;font-weight:500}
-  .form-points .plus{width:34px;height:34px;flex:none;border-radius:50%;background:var(--panel);border:1px solid var(--line);color:#8bc400;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
-  form.req{display:grid;gap:16px}
+  .form-points .plus{width:34px;height:34px;flex:none;border-radius:50%;background:var(--lime);border:1px solid var(--lime);color:#131311;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+  form.req{display:grid;gap:16px;background:var(--acid-tint);border:1px solid var(--lime);border-radius:20px;padding:clamp(20px,2.6vw,30px)}
   form.req input,form.req textarea{width:100%;background:var(--field);border:1px solid var(--line);border-radius:12px;padding:24px 22px;font-family:var(--font);font-size:1.05rem;color:var(--ink)}
   form.req textarea{min-height:190px;resize:vertical}
   form.req input::placeholder,form.req textarea::placeholder{color:#8a8a84}
-  form.req input:focus,form.req textarea:focus{outline:2px solid var(--ink);background:#fff}
-  form.req button{background:#141412;color:#fff;border:0;border-radius:12px;padding:26px 22px;font-family:var(--font);font-size:1.15rem;cursor:pointer;min-height:64px}
+  form.req input:focus,form.req textarea:focus{outline:3px solid var(--lime);background:#fff}
+  form.req button{background:var(--lime);color:#131311;border:2px solid #131311;border-radius:12px;padding:26px 22px;font-family:var(--font);font-size:1.15rem;font-weight:700;cursor:pointer;min-height:64px;transition:background .25s ease,color .25s ease}
+  form.req button:hover{background:#131311;color:#fff}
 
   /* ---------- 8 · Partnerships ---------- */
   .partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
@@ -164,18 +168,27 @@
   .partner-grid .sub{font-weight:500;margin:30px 0 14px}
   .partner-grid .body{font-size:clamp(1.35rem,2.2vw,1.9rem);font-weight:700;letter-spacing:-.025em;line-height:1.38;margin:0;max-width:26ch}
   .partner-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:36px}
+  section[data-module="partnerships"]{background:var(--lime)}
+  section[data-module="partnerships"] .sec-top{border-top-color:rgba(19,19,17,.35)}
+  section[data-module="partnerships"] .sec-top .sq{background:#131311}
+  section[data-module="partnerships"] .stars{color:#131311}
+  section[data-module="partnerships"] .pill{background:#131311;border-color:#131311;color:#fff}
+  section[data-module="partnerships"] .pill .arr{background:var(--lime)}
+  section[data-module="partnerships"] .pill:hover{background:#fff;border-color:#fff;color:#131311}
 
   /* ---------- 9 · Office + footer ---------- */
   .office-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:clamp(30px,5vw,80px);align-items:start}
-  .office-label{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;color:#a9a9a2;text-transform:uppercase;margin:0 0 18px}
+  .office-label{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;color:#131311;text-transform:uppercase;margin:0 0 18px}
   .office-lines{font-size:clamp(1.65rem,3.4vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.3}
   .office-lines a{text-decoration:none}
   .office-lines a.mail{text-decoration:underline;text-underline-offset:6px;word-break:break-all}
   .office-cta{margin-top:34px}
   .side-nav{border-top:1px solid var(--line)}
-  .side-nav a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:19px 2px;border-bottom:1px solid var(--line);text-decoration:none;font-size:1.1rem;font-weight:500;min-height:56px}
+  .side-nav a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:19px 2px;border-bottom:1px solid var(--line);text-decoration:none;font-size:1.1rem;font-weight:500;min-height:56px;transition:background .2s ease}
+  .side-nav a:hover{background:var(--lime)}
+  .office-lines a:hover,.contact-lines a:hover{text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:4px;text-underline-offset:5px}
   .side-nav a .no{color:var(--grey);font-size:.82rem;font-weight:600;margin-right:8px}
-  footer{border-top:1px solid var(--line);padding:clamp(40px,5vw,64px) 0 38px;margin-top:clamp(48px,6vw,72px)}
+  footer{border-top:3px solid var(--lime);padding:clamp(40px,5vw,64px) 0 38px;margin-top:clamp(48px,6vw,72px)}
   .foot-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,56px);align-items:center}
   .foot-tag{font-size:clamp(1.3rem,2.3vw,2rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;text-align:right;margin:0}
   .foot-legal{text-align:center;margin-top:clamp(36px,4vw,54px);border-top:1px solid var(--line);padding-top:28px;position:relative}
@@ -196,7 +209,7 @@
   .contact-lines{font-size:clamp(1.15rem,1.7vw,1.4rem);font-weight:500;line-height:1.55;color:#3d3d38;margin:0}
   .contact-lines a{text-decoration:none}
   .contact-lines a.mail{text-decoration:underline;text-underline-offset:5px}
-  .map-frame{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--field)}
+  .map-frame{border:2px solid var(--lime);border-radius:14px;overflow:hidden;background:var(--field)}
   .map-frame iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
 
   @media (max-width:1000px){
@@ -378,7 +391,7 @@
 
       <div class="form-grid" id="request">
         <div class="form-left rb-fade">
-          <span class="chip-dark"><svg viewBox="0 0 24 24" fill="none" stroke="#cdf463" stroke-width="2" aria-hidden="true"><path d="M21 3L10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8 21 3z" stroke-linejoin="round"/></svg>Contact Now</span>
+          <span class="chip-dark"><svg viewBox="0 0 24 24" fill="none" stroke="#b6ff00" stroke-width="2" aria-hidden="true"><path d="M21 3L10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8 21 3z" stroke-linejoin="round"/></svg>Contact Now</span>
           <h2>Request Information</h2>
           <p class="vetted">This form is reserved for vetted inquiries regarding brand access, strategic alignments, and private deal flow. We will respond if there&rsquo;s a fit.</p>
           <ul class="form-points">
