@@ -18,7 +18,7 @@
        SplitText / BlurText, ShinyText, CountUp, ScrollReveal/FadeContent,
        Magnet, LogoLoop, GlareHover — subtle only, hedge-fund calm.        */
   :root{
-    --bg:#f7f7f3; --white:#ffffff; --panel:#f1f1ec; --field:#f2f2ee;
+    --bg:#ffffff; --white:#ffffff; --panel:#ffffff; --field:#ffffff;
     --ink:#131311; --grey:#76766e; --line:rgba(19,19,17,.14);
     --lime:#cdf463; --font:"Libre Franklin",Helvetica,Arial,sans-serif;
   }
@@ -53,7 +53,7 @@
   .rb-fade.in{opacity:1;transform:none}
 
   /* pill button — lime circle arrow, as in his screenshots */
-  .pill{display:inline-flex;align-items:center;gap:16px;background:var(--panel);border:1px solid rgba(19,19,17,.05);border-radius:999px;padding:6px 26px 6px 6px;text-decoration:none;font-weight:500;font-size:1rem;will-change:transform}
+  .pill{display:inline-flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 26px 6px 6px;text-decoration:none;font-weight:500;font-size:1rem;will-change:transform}
   .pill .arr{width:46px;height:46px;flex:none;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center}
   .pill .arr svg{width:20px;height:20px}
   .pill-lime{background:var(--lime)}
@@ -61,7 +61,7 @@
   .dots{display:flex;gap:7px;align-items:center}
   .dots i{width:9px;height:9px;border-radius:50%;background:#d3d3cc;display:block}
   .dots i:first-child{background:var(--lime)}
-  .tag{display:inline-flex;align-items:center;background:var(--panel);border-radius:999px;padding:9px 18px;font-size:.92rem;font-weight:500;color:#3a3a36;white-space:nowrap}
+  .tag{display:inline-flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:.92rem;font-weight:500;color:#3a3a36;white-space:nowrap}
 
   /* React Bits: GlareHover — extremely subtle (JS sets --gx/--gy) */
   .rb-glare{position:relative;overflow:hidden}
@@ -75,7 +75,7 @@
   .topbar .brand img{height:54px;width:auto}
   .foot-grid img.foot-logo{width:200px;max-width:100%}
   .intro-grid{display:grid;grid-template-columns:250px 1fr;gap:clamp(24px,4vw,60px);margin-top:clamp(28px,4vw,48px)}
-  .intro-side img{width:100%;border-radius:14px;background:#000}
+  .intro-side img{width:100%}
   .intro-side .wm{font-weight:900;font-size:1.35rem;letter-spacing:-.01em;margin-top:16px}
   .intro-copy p{font-size:clamp(1.02rem,1.35vw,1.16rem);line-height:1.65;margin:0 0 26px;max-width:105ch}
   .intro-copy p b{font-weight:700}
@@ -88,7 +88,7 @@
 
   /* ---------- 3 · Process cards ---------- */
   .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .pcard{background:var(--white);border-radius:18px;padding:28px 28px 30px}
+  .pcard{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px 28px 30px}
   .pcard .head{display:flex;justify-content:space-between;align-items:flex-start}
   .pcard .num{font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
   .pcard h3{font-size:1.02rem;font-weight:600;margin:26px 0 16px;display:flex;gap:10px;align-items:center}
@@ -113,7 +113,7 @@
   .logo-set .gazette{font-family:"UnifrakturMaguntia",serif;font-size:2rem;color:#55534d;white-space:nowrap}
   .logo-set img{height:36px;width:auto}
   .holdings{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(40px,5vw,60px)}
-  .hcard{background:var(--white);border-radius:20px;padding:14px}
+  .hcard{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:14px}
   .hcard>img{width:100%;aspect-ratio:1.58;object-fit:cover;border-radius:13px;background:var(--field)}
   .hcard .hrow{display:flex;justify-content:space-between;gap:16px;padding:20px 8px 8px;align-items:flex-start}
   .hcard .hmain{display:flex;gap:16px;align-items:flex-start;min-width:0}
@@ -135,7 +135,7 @@
   .bulletins-copy{max-width:880px;margin:0 auto;text-align:center;font-size:clamp(1rem,1.35vw,1.16rem);line-height:1.6}
   .center-cta{text-align:center;margin-top:28px}
   .bulletins{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(36px,4.5vw,54px)}
-  .bcard{background:var(--white);border-radius:18px;padding:12px}
+  .bcard{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:12px}
   .bcard img{width:100%;aspect-ratio:1.63;object-fit:cover;border-radius:12px}
   .bcard .bbody{padding:18px 10px 8px}
   .bcard h3{font-size:1.16rem;font-weight:600;line-height:1.35;margin:0}
@@ -147,9 +147,9 @@
   .form-left .vetted{font-size:clamp(1.08rem,1.5vw,1.28rem);font-weight:600;line-height:1.45;margin:26px 0 0;max-width:38ch}
   .form-points{list-style:none;margin:30px 0 34px;padding:24px 0 0;border-top:1px solid var(--line);display:grid;gap:18px}
   .form-points li{display:flex;align-items:center;gap:14px;font-size:1.05rem;font-weight:500}
-  .form-points .plus{width:34px;height:34px;flex:none;border-radius:50%;background:var(--panel);color:#8bc400;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+  .form-points .plus{width:34px;height:34px;flex:none;border-radius:50%;background:var(--panel);border:1px solid var(--line);color:#8bc400;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
   form.req{display:grid;gap:16px}
-  form.req input,form.req textarea{width:100%;background:var(--field);border:1px solid rgba(19,19,17,.04);border-radius:12px;padding:24px 22px;font-family:var(--font);font-size:1.05rem;color:var(--ink)}
+  form.req input,form.req textarea{width:100%;background:var(--field);border:1px solid var(--line);border-radius:12px;padding:24px 22px;font-family:var(--font);font-size:1.05rem;color:var(--ink)}
   form.req textarea{min-height:190px;resize:vertical}
   form.req input::placeholder,form.req textarea::placeholder{color:#8a8a84}
   form.req input:focus,form.req textarea:focus{outline:2px solid var(--ink);background:#fff}
@@ -367,7 +367,7 @@
             <li><span class="plus">+</span>Inquire About Brand Licensing Opportunities</li>
             <li><span class="plus">+</span>Available Worldwide</li>
           </ul>
-          <a class="pill" href="mailto:inquiries@slapscorp.com"><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>Contact now</a>
+          <a class="pill" href="#request"><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>Contact now</a>
         </div>
         <form class="req rb-fade" style="--d:1" id="reqForm">
           <input type="text" id="rName" placeholder="Name*" autocomplete="name" required />
@@ -433,7 +433,7 @@
       <p class="copy">© 2025 SLAPS CORPORATION. All rights reserved.</p>
       <p class="addr">1111 Lincoln Road, Miami Beach, FL 33139 United States of America</p>
       <p class="stmt">SLAPS CORP. develops and governs brand systems across consumer, digital, and media verticals. All trademarks, content, and proprietary assets are protected under applicable law.</p>
-      <p class="links"><a href="#">Terms of Service</a> / <a href="#">Privacy Policy</a></p>
+      <p class="links"><a href="#contact">Terms of Service</a> / <a href="#contact">Privacy Policy</a></p>
       <a class="to-top" href="#top">©TOP</a>
     </div>
   </div>
