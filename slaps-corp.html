@@ -186,9 +186,22 @@
   .foot-legal .links a{text-underline-offset:4px}
   .to-top{position:absolute;right:0;bottom:0;font-weight:700;text-decoration:none;padding:8px 0}
 
+  /* ---------- 10 · Contact block (city + map) ---------- */
+  .contact-head{font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:800;letter-spacing:.55em;text-indent:.55em;text-transform:uppercase;text-align:center;margin:0 0 clamp(36px,4.5vw,56px)}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,80px);align-items:stretch}
+  .contact-city{font-size:clamp(2.4rem,4.6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0}
+  .contact-block{margin-top:clamp(32px,4vw,48px)}
+  .contact-label{font-size:1.05rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0 0 16px;display:flex;align-items:center;gap:10px}
+  .contact-label .sq{width:11px;height:11px;background:var(--lime);border-radius:2px;flex:none}
+  .contact-lines{font-size:clamp(1.15rem,1.7vw,1.4rem);font-weight:500;line-height:1.55;color:#3d3d38;margin:0}
+  .contact-lines a{text-decoration:none}
+  .contact-lines a.mail{text-decoration:underline;text-underline-offset:5px}
+  .map-frame{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--field)}
+  .map-frame iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
   @media (max-width:1000px){
     .intro-grid,.gov{grid-template-columns:1fr}
-    .two-col,.cards3,.brands,.holdings,.bulletins,.partner-grid,.office-grid,.form-grid,.foot-grid{grid-template-columns:1fr}
+    .two-col,.cards3,.brands,.holdings,.bulletins,.partner-grid,.office-grid,.form-grid,.foot-grid,.contact-grid{grid-template-columns:1fr}
     .stats{grid-template-columns:1fr}
     .sec-top .mid{display:none}
     .foot-tag{text-align:left}
@@ -423,6 +436,29 @@
           <a href="#insights"><span><span class="no">04 /</span>Insights</span><span>→</span></a>
           <a href="#contact"><span><span class="no">05 /</span>Contact</span><span>→</span></a>
         </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10 · Contact — Miami Beach + map ===== -->
+  <section data-module="contact-map" class="tight">
+    <div class="wrap">
+      <h2 class="contact-head rb-fade">Contact</h2>
+      <div class="contact-grid">
+        <div class="rb-fade">
+          <h3 class="contact-city">Miami Beach</h3>
+          <div class="contact-block">
+            <p class="contact-label"><span class="sq"></span>Location</p>
+            <p class="contact-lines">1111 Lincoln Road, Suite 500<br />Miami Beach, FL 33139<br />USA</p>
+          </div>
+          <div class="contact-block">
+            <p class="contact-label"><span class="sq"></span>Contact</p>
+            <p class="contact-lines">Phone: <a href="tel:+17543543304">+1 (754) 354-3304</a><br /><a class="mail" href="mailto:inquiries@slapscorp.com">inquiries@slapscorp.com</a></p>
+          </div>
+        </div>
+        <div class="map-frame rb-fade" style="--d:1">
+          <iframe title="Map — 1111 Lincoln Road, Suite 500, Miami Beach, FL 33139" src="https://www.google.com/maps?q=1111%20Lincoln%20Road%2C%20Miami%20Beach%2C%20FL%2033139&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </section>
